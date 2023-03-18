@@ -1,0 +1,22 @@
+{% extends 'base.html'%} <!--Everthing from the main base html is here-->
+{% block head %}
+
+{% endblock %}
+
+{% block body %}
+    <h1>{% block title %} CREATE USER {% endblock %}</h1>
+    <form method="post">
+        <label for="first_name">ENTER FIRST NAME</label>
+        <br>
+        <input type="text" name="first_name" placeholder="First Name" value="{{request.form['first_name']}}">
+        <br>
+
+        <label for="last_name">ENTER LAST NAME</label>
+        <br>
+        <input type="text" name="last_name" placeholder="Last Name" value="{{request.form['last_name']}}">
+        <br>
+
+        <button type="submit">Submit</button>
+
+    </form>
+{% endblock %}

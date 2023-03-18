@@ -1,0 +1,33 @@
+{% extends 'base.html'%} <!--Everthing from the main base html is here-->
+{% block head %}
+
+{% endblock %}
+
+{% block body %}
+<h1>{% block title %} SEARCH USER {% endblock %}</h1>
+<form method="post">
+    <label for="first_name">ENTER FIRST NAME</label>
+    <br>
+    <input type="text" name="first_name" placeholder="First Name" value="{{request.form['first_name']}}">
+    <br>
+
+    <label for="last_name">ENTER LAST NAME</label>
+    <br>
+    <input type="text" name="last_name" placeholder="Last Name" value="{{request.form['last_name']}}">
+    <br>
+
+    <label for="points">ENTER POINTS</label>
+    <br>
+    <input type="text" name="points" placeholder="User's Points'" value="{{request.form['points']}}">
+    <br>
+
+    <label for="user_id">ENTER USER'S ID</label>
+    <br>
+    <input type="text" name="id" placeholder="ID" value="{{request.form['user_id']}}">
+    <br>
+
+    <button type="submit">Submit</button>
+
+</form>
+
+{% endblock %}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/main.css')}}" />
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <!--Allows child pages to contain all content from this page except for sections between the block area -->
+    {% block head %} {% endblock %}
+</head>
+<body>
+   
+    <nav>
+        <a href="{{url_for('create_user')}}">Create</a>
+        <a href="{{url_for('search_user')}}">SEARCH</a>
+        <a href="{{url_for('delete_user')}}">DELETE</a>
+    </nav>
+    
+    {% block body %}{% endblock %}
+    {% for message in get_flashed_messages() %}
+        <div class=" alert">{{message}}</div>
+    {% endfor %}
+
+
+</body>
+</html>
